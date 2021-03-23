@@ -1,0 +1,133 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport
+    [autoFocus]="false"
+    [attr.role]="'dialog'"
+    [mode]="'over'"
+  >
+    <mat-toolbar>
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        class="sidenav-icon"
+      >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span class="sidenav-header">YouTube</span>
+    </mat-toolbar>
+    <mat-divider class="sidenav-divider"></mat-divider>
+    <mat-nav-list>
+      <a mat-list-item href="#">
+        <mat-icon class="sidenav-list-text-icon">home</mat-icon>
+        <span class="sidenav-list-text">Home</span>
+      </a>
+      <a mat-list-item href="#">
+        <mat-icon class="sidenav-list-text-icon"
+          >local_fire_department</mat-icon
+        >
+        <span class="sidenav-list-text">Trending</span>
+      </a>
+      <a mat-list-item href="#">
+        <mat-icon class="sidenav-list-text-icon">subscriptions</mat-icon>
+        <span class="sidenav-list-text">Subscriptions</span>
+      </a>
+    </mat-nav-list>
+    <mat-divider class="sidenav-divider"></mat-divider>
+    <mat-nav-list>
+      <a mat-list-item href="#">
+        <mat-icon class="sidenav-list-text-icon">video_library</mat-icon>
+        <span class="sidenav-list-text">Library</span>
+      </a>
+      <a mat-list-item href="#">
+        <mat-icon class="sidenav-list-text-icon">history</mat-icon>
+        <span class="sidenav-list-text">History</span>
+      </a>
+      <a mat-list-item href="#">
+        <mat-icon
+          class="sidenav-list-text-icon"
+          fontSet="material-icons-outlined"
+          >smart_display</mat-icon
+        >
+        <span class="sidenav-list-text">Your videos</span>
+      </a>
+      <a mat-list-item href="#">
+        <mat-icon class="sidenav-list-text-icon">watch_later</mat-icon>
+        <span class="sidenav-list-text">Watch later</span>
+      </a>
+      <a mat-list-item href="#">
+        <mat-icon class="sidenav-list-text-icon">thumb_up</mat-icon>
+        <span class="sidenav-list-text">Liked videos</span>
+      </a>
+      <a mat-list-item href="#" *ngFor="let playlist of playlist_data">
+        <mat-icon class="sidenav-list-text-icon">playlist_play</mat-icon>
+        <span class="sidenav-list-text">{{ playlist }}</span>
+      </a>
+    </mat-nav-list>
+    <mat-divider class="sidenav-divider"></mat-divider>
+    <mat-nav-list>
+      <span class="sidenav-list-header">SUBSCRIPTIONS</span>
+      <a mat-list-item href="#" *ngFor="let subscription of subscription_data">
+        <mat-icon class="sidenav-list-text-icon">face</mat-icon>
+        <span class="sidenav-list-text">{{ subscription }}</span>
+      </a>
+    </mat-nav-list>
+    <mat-divider class="sidenav-divider"></mat-divider>
+    <mat-nav-list>
+      <a mat-list-item href="#">
+        <mat-icon class="sidenav-list-text-icon">settings</mat-icon>
+        <span class="sidenav-list-text">Settings</span>
+      </a>
+      <a mat-list-item href="#">
+        <mat-icon class="sidenav-list-text-icon">help</mat-icon>
+        <span class="sidenav-list-text">Help</span>
+      </a>
+    </mat-nav-list>
+    <mat-divider class="sidenav-divider"></mat-divider>
+    <span class="sidenav-bottom">Made by one idiot</span>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar>
+      <div id="start">
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()"
+        >
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <span> YouTube </span>
+      </div>
+      <div id="center">
+        <mat-form-field color="warn" appearance="outline" class="full-width">
+          <input matInput placeholder="Search" />
+        </mat-form-field>
+        <button type="button" mat-raised-button id="search-btn">
+          <mat-icon>search</mat-icon>
+        </button>
+        <button type="button" mat-icon-button id="voice-btn">
+          <mat-icon>keyboard_voice</mat-icon>
+        </button>
+      </div>
+      <div id="end">
+        <button type="button" mat-icon-button class="end-icon">
+          <mat-icon>video_call</mat-icon>
+        </button>
+        <button type="button" mat-icon-button class="end-icon">
+          <mat-icon>apps</mat-icon>
+        </button>
+        <button type="button" mat-icon-button class="end-icon">
+          <mat-icon>notifications</mat-icon>
+        </button>
+        <button type="button" mat-icon-button class="end-icon">
+          <mat-icon>portrait</mat-icon>
+        </button>
+      </div>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+  </mat-sidenav-content>
+</mat-sidenav-container>
