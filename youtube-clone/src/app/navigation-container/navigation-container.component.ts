@@ -1,7 +1,4 @@
-import { Component } from '@angular/core';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Observable } from 'rxjs';
-import { map, shareReplay } from 'rxjs/operators';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-navigation-container',
@@ -9,15 +6,30 @@ import { map, shareReplay } from 'rxjs/operators';
   styleUrls: ['./navigation-container.component.css'],
 })
 export class NavigationContainerComponent {
-  isHandset$: Observable<boolean> = this.breakpointObserver
-    .observe(Breakpoints.Handset)
-    .pipe(
-      map((result) => result.matches),
-      shareReplay()
-    );
+  screenWidth: number = 0;
+  searchView: boolean = false;
+  searchBoxFocus: boolean = false;
 
   playlist_data: string[] = ['Sample playlist 1', 'Sample playlist 2'];
   subscription_data: string[] = ['Sample sub 1', 'Sample sub 2'];
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor() {
+    this.onResize();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    this.screenWidth = window.innerWidth;
+    if (this.screenWidth > 740 && !this.searchBoxFocus) this.searchView = false;
+  }
+
+  onBlur() {
+    if (this.screenWidth > 740) this.searchView = false;
+    this.searchBoxFocus = false;
+  }
+
+  onFocus() {
+    this.searchView = true;
+    this.searchBoxFocus = true;
+  }
 }

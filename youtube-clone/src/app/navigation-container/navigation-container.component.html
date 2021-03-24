@@ -91,7 +91,7 @@
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar>
-      <div id="start">
+      <div id="start" *ngIf="!searchView || screenWidth > 740">
         <button
           type="button"
           aria-label="Toggle sidenav"
@@ -103,17 +103,55 @@
         <span> YouTube </span>
       </div>
       <div id="center">
-        <mat-form-field color="warn" appearance="outline" class="full-width">
-          <input matInput placeholder="Search" />
+        <button
+          type="button"
+          id="back-icon"
+          mat-icon-button
+          (click)="searchView = false"
+          *ngIf="searchView && screenWidth < 740"
+        >
+          <mat-icon>arrow_back</mat-icon>
+        </button>
+        <mat-form-field
+          *ngIf="searchView || screenWidth > 740"
+          color="warn"
+          appearance="outline"
+          class="full-width"
+        >
+          <input
+            matInput
+            (blur)="onBlur()"
+            (focus)="onFocus()"
+            placeholder="Search"
+          />
         </mat-form-field>
-        <button type="button" mat-raised-button id="search-btn">
+        <button
+          *ngIf="searchView || screenWidth > 740"
+          type="button"
+          mat-raised-button
+          id="search-btn"
+        >
           <mat-icon>search</mat-icon>
         </button>
-        <button type="button" mat-icon-button id="voice-btn">
+        <button
+          *ngIf="screenWidth > 740"
+          type="button"
+          mat-icon-button
+          id="voice-btn"
+        >
           <mat-icon>keyboard_voice</mat-icon>
         </button>
+        <button
+          type="button"
+          mat-icon-button
+          id="search-btn"
+          (click)="searchView = true"
+          *ngIf="!searchView && screenWidth < 740"
+        >
+          <mat-icon>search</mat-icon>
+        </button>
       </div>
-      <div id="end">
+      <div id="end" *ngIf="!searchView || screenWidth > 740">
         <button type="button" mat-icon-button class="end-icon">
           <mat-icon>video_call</mat-icon>
         </button>

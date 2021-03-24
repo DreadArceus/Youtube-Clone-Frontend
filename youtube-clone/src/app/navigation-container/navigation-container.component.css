@@ -98,6 +98,11 @@
   margin-left: 15px;
 }
 
+#back-icon {
+  margin: auto;
+  margin-right: 10px;
+}
+
 ::ng-deep .mat-form-field-flex > .mat-form-field-infix {
   padding-top: 0px !important;
   padding-bottom: 7px !important;
