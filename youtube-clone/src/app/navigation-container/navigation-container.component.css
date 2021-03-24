@@ -17,10 +17,14 @@ mat-toolbar {
   background: inherit;
 }
 
-.mat-toolbar.mat-primary {
+.mat-toolbar {
   position: sticky;
   top: 0;
   z-index: 1;
+}
+
+.sidenav-toolbar {
+  background-color: rgb(33, 33, 33) !important;
 }
 
 ::ng-deep .mat-drawer-backdrop.mat-drawer-shown {
