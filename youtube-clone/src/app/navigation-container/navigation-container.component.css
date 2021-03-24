@@ -3,9 +3,14 @@
 }
 
 .sidenav {
-  width: 300px;
+  width: 304px;
   background-color: rgb(33, 33, 33);
   scrollbar-color: rgb(96, 96, 96) transparent;
+}
+
+mat-toolbar {
+  min-height: 64px;
+  max-height: 64px;
 }
 
 .sidenav .mat-toolbar {
@@ -71,7 +76,7 @@
 
 #search-btn {
   display: block;
-  height: fit-content;
+  height: 40px;
   margin: auto;
 }
 
