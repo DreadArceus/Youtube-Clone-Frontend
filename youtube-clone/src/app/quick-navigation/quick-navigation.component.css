@@ -1,0 +1,50 @@
+.example-container {
+  height: calc(100vh - 64px);
+}
+
+.quick-nav {
+  height: 100%;
+  width: fit-content;
+  background-color: rgb(33, 33, 33);
+}
+
+.multi-line-list {
+  width: 80px;
+}
+
+.quick-nav-icon,
+.quick-nav-text {
+  color: grey;
+  display: block;
+  margin: auto;
+  height: fit-content;
+  width: fit-content;
+}
+
+.active-quick-nav {
+  color: white;
+}
+
+.quick-nav-link {
+  background-color: rgb(33, 33, 33);
+  width: 100%;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.quick-nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+a:active {
+  text-decoration: none;
+}
+
+.quick-nav-icon {
+  margin-bottom: 4px;
+}
+
+.quick-nav-text {
+  font-size: 10px;
+  font-weight: 400;
+}

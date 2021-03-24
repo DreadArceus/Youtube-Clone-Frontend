@@ -166,39 +166,6 @@
         </button>
       </div>
     </mat-toolbar>
-    <!-- Add Content Here -->
-    <mat-drawer-container class="example-container">
-      <mat-drawer mode="side" opened class="quick-nav">
-        <div class="multi-line-list">
-          <div class="quick-nav-link">
-          <a href="#">
-            <mat-icon matLine class="quick-nav-icon active-quick-nav">home</mat-icon>
-            <span matLine class="quick-nav-text active-quick-nav">Home</span>
-          </a>
-        </div>
-        <div class="quick-nav-link">
-          <a href="#">
-            <mat-icon matLine class="quick-nav-icon">explore</mat-icon>
-            <span matLine class="quick-nav-text">Explore</span>
-          </a>
-        </div>
-        <div class="quick-nav-link">
-          <a href="#">
-            <mat-icon matLine class="quick-nav-icon">subscriptions</mat-icon>
-            <span matLine class="quick-nav-text">Subscriptions</span>
-          </a>
-        </div>
-        <div class="quick-nav-link">
-          <a href="#">
-              <mat-icon matLine class="quick-nav-icon">video_library</mat-icon>
-              <span matLine class="quick-nav-text">Library</span>
-            </a>
-          </div>
-        </div>
-      </mat-drawer>
-      <mat-drawer-content>
-        <!-- Add Content Here -->
-      </mat-drawer-content>
-    </mat-drawer-container>
+    <ng-content select="[main-content]"></ng-content>
   </mat-sidenav-content>
 </mat-sidenav-container>

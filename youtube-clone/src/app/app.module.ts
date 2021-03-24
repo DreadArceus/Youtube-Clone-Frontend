@@ -11,13 +11,17 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from "@angular/material/input";
+import { MatInputModule } from '@angular/material/input';
 import { NavigationContainerComponent } from './navigation-container/navigation-container.component';
+import { QuickNavigationComponent } from './quick-navigation/quick-navigation.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationContainerComponent,
+    QuickNavigationComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,9 +34,9 @@ import { NavigationContainerComponent } from './navigation-container/navigation-
     MatIconModule,
     MatListModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
