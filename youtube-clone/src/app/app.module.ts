@@ -15,6 +15,7 @@ import { MatInputModule } from '@angular/material/input';
 import { NavigationContainerComponent } from './navigation-container/navigation-container.component';
 import { QuickNavigationComponent } from './quick-navigation/quick-navigation.component';
 import { HomeComponent } from './home/home.component';
+import { VideoCardComponent } from './home/video-card/video-card.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { HomeComponent } from './home/home.component';
     NavigationContainerComponent,
     QuickNavigationComponent,
     HomeComponent,
+    VideoCardComponent,
   ],
   imports: [
     BrowserModule,

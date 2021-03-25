@@ -48,3 +48,7 @@ a:active {
   font-size: 10px;
   font-weight: 400;
 }
+
+.main-content {
+  scrollbar-color: rgb(96, 96, 96) transparent;
+}

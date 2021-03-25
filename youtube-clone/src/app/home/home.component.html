@@ -1,3 +1,7 @@
 <app-quick-navigation>
-  <div main-content>Example</div>
+  <div main-content class="video-grid">
+    <div class="video-card-container" *ngFor="let video of recommended_videos">
+      <app-video-card [data]="video"></app-video-card>
+    </div>
+  </div>
 </app-quick-navigation>

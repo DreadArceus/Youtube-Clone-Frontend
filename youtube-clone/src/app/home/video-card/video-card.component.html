@@ -1,0 +1,35 @@
+<div class="video-card">
+  <a href="{{ data.video_link }}" class="video-link">
+    <img
+      class="video-thumbnail"
+      src="{{ data.thumbnail_link }}"
+      alt="thumbnail"
+    />
+  </a>
+  <div class="video-card-content">
+    <a href="{{ data.channel_link }}">
+      <img
+        class="video-channel-logo"
+        src="{{ data.channel_logo_link }}"
+        alt="channel logo"
+      />
+    </a>
+    <div class="video-card-details">
+      <a href="{{ data.video_link }}" class="video-link">
+        <span class="video-title">
+          {{ data.video_title }}
+        </span>
+      </a>
+      <br />
+      <a href="{{ data.channel_link }}">
+        <span class="video-channel">
+          {{ data.channel_name }}
+        </span>
+      </a>
+      <br />
+      <span class="video-analytics">
+        {{ data.views }} {{ data.upload_date }}
+      </span>
+    </div>
+  </div>
+</div>

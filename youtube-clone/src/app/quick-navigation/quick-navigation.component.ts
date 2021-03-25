@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-quick-navigation',
@@ -6,7 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./quick-navigation.component.css'],
 })
 export class QuickNavigationComponent implements OnInit {
-  constructor() {}
+  screenWidth: number;
+  constructor() {
+    this.screenWidth = window.innerWidth;
+  }
 
   ngOnInit(): void {}
+
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    this.screenWidth = window.innerWidth;
+  }
 }

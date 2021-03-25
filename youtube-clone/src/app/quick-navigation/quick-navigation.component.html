@@ -1,6 +1,6 @@
 <mat-drawer-container class="example-container">
   <mat-drawer mode="side" opened class="quick-nav">
-    <div class="multi-line-list">
+    <div class="multi-line-list" *ngIf="screenWidth > 806">
       <div class="quick-nav-link">
         <a href="#">
           <mat-icon matLine class="quick-nav-icon active-quick-nav"
@@ -29,7 +29,7 @@
       </div>
     </div>
   </mat-drawer>
-  <mat-drawer-content>
+  <mat-drawer-content class="main-content">
     <ng-content select="[main-content]"></ng-content>
   </mat-drawer-content>
 </mat-drawer-container>
