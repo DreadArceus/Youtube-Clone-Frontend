@@ -20,8 +20,8 @@
       <span class="sidenav-header">YouTube</span>
     </mat-toolbar>
     <mat-divider class="sidenav-divider"></mat-divider>
-    <mat-nav-list>
-      <a mat-list-item href="#">
+    <mat-nav-list (click)="drawer.toggle()">
+      <a mat-list-item routerLink="">
         <mat-icon class="sidenav-list-text-icon">home</mat-icon>
         <span class="sidenav-list-text">Home</span>
       </a>
@@ -89,7 +89,7 @@
     <mat-divider class="sidenav-divider"></mat-divider>
     <span class="sidenav-bottom">Made by one idiot</span>
   </mat-sidenav>
-  <mat-sidenav-content>
+  <mat-sidenav-content class="bg-color">
     <mat-toolbar>
       <div id="start" *ngIf="!searchView || screenWidth > 740">
         <button
@@ -100,7 +100,7 @@
         >
           <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
         </button>
-        <span> YouTube </span>
+        <a routerLink="" class="logo"> YouTube </a>
       </div>
       <div id="center">
         <button

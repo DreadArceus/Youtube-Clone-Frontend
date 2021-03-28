@@ -1,0 +1,112 @@
+<div class="page flex">
+  <div class="left">
+    <div class="video-container">
+      <app-video-player></app-video-player>
+    </div>
+    <span class="video-title">{{ active_video.video_title }}</span>
+    <div class="flex item-center">
+      <span class="video-analytics"
+        >{{
+          screenWidth > 520 ? active_video.exact_views : active_video.views
+        }}
+        {{ screenWidth > 600 ? active_video.exact_upload_date : "" }}</span
+      >
+      <div class="actions">
+        <div class="action-link gray" (click)="likeComment()">
+          <button mat-icon-button>
+            <mat-icon [ngClass]="liked ? 'blue' : ''">thumb_up</mat-icon>
+          </button>
+          <span class="action-text">{{ active_video.likes }}</span>
+        </div>
+        <div class="action-link gray" (click)="dislikeComment()">
+          <button mat-icon-button>
+            <mat-icon [ngClass]="disliked ? 'blue' : ''">thumb_down</mat-icon>
+          </button>
+          <span class="action-text">{{ active_video.dislikes }}</span>
+        </div>
+        <div class="action-link gray">
+          <button mat-icon-button>
+            <mat-icon
+              class="action-icon"
+              style="transform: rotateZ(180deg); transform: rotateY(180deg)"
+              >reply</mat-icon
+            >
+          </button>
+          <span class="action-text">SHARE</span>
+        </div>
+        <div class="action-link gray">
+          <button mat-icon-button>
+            <mat-icon class="action-icon">playlist_add</mat-icon>
+          </button>
+          <span class="action-text">SAVE</span>
+        </div>
+        <div class="more-actions">
+          <button mat-icon-button>
+            <mat-icon class="action-icon">more_horiz</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="flex margin-top">
+      <img class="channel-logo" src="{{ active_video.channel_logo_link }}" />
+      <span class="channel-name"
+        >{{ active_video.channel_name }}<br /><span class="sub-count"
+          >{{ active_video.channel_sub_count }} subscribers</span
+        >
+      </span>
+      <button
+        mat-raised-button
+        color="{{ subscribed ? 'default' : 'warn' }}"
+        class="sub-btn"
+        (click)="subscribed = !subscribed"
+      >
+        {{ subscribed ? "SUBSCRIBED" : "SUBSCRIBE" }}
+      </button>
+    </div>
+    <div class="description">
+      <span *ngFor="let line of getDescription()" class="description_line"
+        >{{ line }}<br
+      /></span>
+      <div class="description-expander">
+        <span (click)="expandDescription = !expandDescription">
+          Show {{ expandDescription ? "Less" : "More" }}
+        </span>
+      </div>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="margin-top">
+      <span class="comment-count"
+        >{{ active_video.comments.length }} Comments</span
+      >
+    </div>
+    <div class="flex margin-top">
+      <img
+        class="user-display-picture"
+        src="https://yt3.ggpht.com/yti/ANoDKi5Gp_Rq4FdAu--YygXks57IySOThvW5u1M8KgUC7Q=s88-c-k-c0x00ffffff-no-rj"
+      />
+      <mat-form-field class="comment-input" color="warn">
+        <input
+          matInput
+          placeholder="Add a public comment..."
+          [(ngModel)]="newCommentMessage"
+        />
+      </mat-form-field>
+      <button mat-icon-button (click)="newComment()">
+        <mat-icon>send</mat-icon>
+      </button>
+    </div>
+    <div class="comments">
+      <app-video-comment
+        *ngFor="let comment of active_video.comments"
+        [data]="comment"
+      ></app-video-comment>
+    </div>
+  </div>
+  <div class="right" *ngIf="screenWidth > 1039">
+    <app-side-video-card
+      *ngFor="let data of side_videos"
+      [videoData]="data"
+    ></app-side-video-card>
+  </div>
+</div>

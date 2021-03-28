@@ -1,3 +1,13 @@
+a,
+a:hover,
+a:active {
+  text-decoration: none;
+}
+
+.logo {
+  color: white;
+}
+
 .sidenav-container {
   height: 100%;
 }
@@ -64,6 +74,10 @@ mat-toolbar {
 .sidenav-bottom {
   margin-left: 20px;
   padding-bottom: 20px;
+}
+
+.bg-color {
+  background-color: rgb(24, 24, 24);
 }
 
 #start {

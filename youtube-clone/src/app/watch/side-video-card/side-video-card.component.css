@@ -1,0 +1,35 @@
+span {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.card-container {
+  display: flex;
+  margin-left: 24px;
+  margin-bottom: 8px;
+  padding-right: 12px;
+}
+
+.video-thumbnail {
+  width: 168px;
+  height: fit-content;
+}
+
+.detail-container {
+  margin-left: 8px;
+}
+
+.title {
+  font-weight: 500;
+  -webkit-line-clamp: 2;
+}
+
+.channel-name{
+  -webkit-line-clamp: 1;
+}
+
+.extra-detail {
+  color: rgb(170, 170, 170);
+  font-size: 13px;
+}

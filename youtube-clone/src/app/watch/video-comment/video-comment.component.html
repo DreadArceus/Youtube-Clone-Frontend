@@ -1,0 +1,46 @@
+<div class="flex container">
+  <img
+    [ngClass]="reply ? 'reply-display-pic' : 'display-pic'"
+    src="{{ data.user_display_picture }}"
+  />
+  <div class="right">
+    <div class="details">
+      <span class="username">{{ data.username }}</span>
+      <span class="gray">{{ data.upload_date }}</span
+      ><br />
+    </div>
+    <span class="message">{{ data.message }}</span>
+    <div class="actions flex">
+      <button class="icon-btn" (click)="likeComment()">
+        <mat-icon [ngClass]="liked ? 'action-icon blue' : 'action-icon gray'">thumb_up</mat-icon>
+      </button>
+      <span class="gray" *ngIf="data.likes != '0'">{{ data.likes }}</span>
+      <button class="icon-btn" (click)="dislikeComment()">
+        <mat-icon [ngClass]="disliked ? 'action-icon blue' : 'action-icon gray'">thumb_down</mat-icon>
+      </button>
+      <button mat-button class="action-text gray">REPLY</button>
+    </div>
+    <div class="replies" *ngIf="data.replies.length">
+      <div class="reply-toggle flex" (click)="showReplies = !showReplies">
+        <mat-icon class="reply-toggle-icon no-selection">{{
+          showReplies ? "keyboard_arrow_up" : "keyboard_arrow_down"
+        }}</mat-icon>
+        <span class="reply-toggle-text no-selection"
+          >{{ showReplies ? "Hide" : "View" }}
+          {{
+            data.replies.length === 1
+              ? "reply"
+              : data.replies.length + " replies"
+          }}</span
+        >
+      </div>
+      <div class="reply-container" *ngIf="showReplies">
+        <app-video-comment
+          *ngFor="let reply of data.replies"
+          [data]="reply"
+          [reply]="true"
+        ></app-video-comment>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,5 @@
 <div class="video-card">
-  <a href="{{ data.video_link }}" class="video-link">
+  <a routerLink="watch" class="video-link">
     <img
       class="video-thumbnail"
       src="{{ data.thumbnail_link }}"
@@ -15,7 +15,7 @@
       />
     </a>
     <div class="video-card-details">
-      <a href="{{ data.video_link }}" class="video-link">
+      <a routerLink="watch" class="video-link">
         <span class="video-title">
           {{ data.video_title }}
         </span>
