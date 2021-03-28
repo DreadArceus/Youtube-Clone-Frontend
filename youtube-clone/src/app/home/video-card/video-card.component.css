@@ -1,9 +1,12 @@
-.video-card {
-  max-width: 21vw;
+a,
+a:hover,
+a:active {
+  color: rgb(170, 170, 170);
+  text-decoration: none;
 }
 
-a:active {
-  text-decoration: none;
+.video-card {
+  max-width: 21vw;
 }
 
 .video-link,

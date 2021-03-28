@@ -1,3 +1,10 @@
+a,
+a:hover,
+a:active {
+  color: rgb(170, 170, 170);
+  text-decoration: none;
+}
+
 .example-container {
   height: calc(100vh - 64px);
 }

@@ -1,3 +1,10 @@
+a,
+a:hover,
+a:active {
+  color: rgb(170, 170, 170);
+  text-decoration: none;
+}
+
 .video-grid {
   text-align: center;
   background-color: rgb(24, 24, 24);
