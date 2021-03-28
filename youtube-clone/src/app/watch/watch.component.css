@@ -14,7 +14,7 @@ a:active {
 }
 
 .left {
-  margin-left: 3vw;
+  margin-left: 4.5vw;
 }
 
 .right {
@@ -22,7 +22,10 @@ a:active {
 }
 
 .video-container {
-  width: 62vw;
+  width: 66.6vw;
+  padding-top: 56.25%;
+  position: relative;
+  height: 0px;
   margin-bottom: 8px;
 }
 
@@ -134,15 +137,9 @@ a:active {
   margin-top: 16px;
 }
 
-@media screen and (max-width: 1123px) {
+@media screen and (max-width: 1440px) {
   .left {
-    margin-left: 33.6833px;
-  }
-  .video-container {
-    width: 696.25px;
-  }
-  .right {
-    width: 40vw;
+    margin-left: 2vw;
   }
 }
 
@@ -151,6 +148,6 @@ a:active {
     margin-left: 4vw;
   }
   .video-container {
-    width: 89vw;
+    width: 90vw;
   }
 }
