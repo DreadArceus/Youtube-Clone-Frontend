@@ -1,6 +1,6 @@
 <div class="page flex">
   <div class="left">
-    <div class="video-container">
+    <div class="video-container" [style.width.px]="videoWidth">
       <app-video-player></app-video-player>
     </div>
     <span class="video-title">{{ active_video.video_title }}</span>
@@ -103,7 +103,7 @@
       ></app-video-comment>
     </div>
   </div>
-  <div class="right" *ngIf="screenWidth > 1039">
+  <div [style.width.px]="sideCardWidth" *ngIf="screenWidth > 1080">
     <app-side-video-card
       *ngFor="let data of side_videos"
       [videoData]="data"

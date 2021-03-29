@@ -8,7 +8,7 @@ span {
   display: flex;
   margin-left: 24px;
   margin-bottom: 8px;
-  padding-right: 12px;
+  padding-right: 2vw;
 }
 
 .video-thumbnail {
@@ -25,7 +25,7 @@ span {
   -webkit-line-clamp: 2;
 }
 
-.channel-name{
+.channel-name {
   -webkit-line-clamp: 1;
 }
 

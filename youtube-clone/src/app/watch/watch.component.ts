@@ -252,6 +252,8 @@ export class WatchComponent implements OnInit {
 
   processed_description: string[] = [];
   screenWidth: number = 0;
+  videoWidth: number = 0;
+  sideCardWidth: number = 0;
   expandDescription: boolean = false;
   subscribed: boolean = false;
   liked: boolean = false;
@@ -286,11 +288,33 @@ export class WatchComponent implements OnInit {
       ...this.active_video.comments,
     ];
     this.screenWidth = window.innerWidth;
+    if (this.screenWidth <= 540) {
+      this.videoWidth = (97 * 540) / 100 - (540 - this.screenWidth);
+    } else if (this.screenWidth <= 1080) {
+      this.videoWidth = (93 * 1080) / 100 - (1080 - this.screenWidth);
+      this.sideCardWidth = 550 - (1225 - 1080);
+    } else if (this.screenWidth <= 1225) {
+      this.sideCardWidth = 550 - (1225 - this.screenWidth);
+      this.videoWidth = (72 * 1920) / 100 - (1920 - 1225);
+    } else {
+      this.videoWidth = (72 * 1920) / 100 - (1920 - this.screenWidth);
+      this.sideCardWidth = 550;
+    }
   }
 
   @HostListener('window:resize', ['$event'])
   onResize() {
     this.screenWidth = window.innerWidth;
+    if (this.screenWidth <= 540) {
+      this.videoWidth = (97 * 540) / 100 - (540 - this.screenWidth);
+    } else if (this.screenWidth <= 1080) {
+      this.videoWidth = (93 * 1080) / 100 - (1080 - this.screenWidth);
+    } else if (this.screenWidth <= 1225) {
+      this.sideCardWidth = 550 - (1225 - this.screenWidth);
+      this.videoWidth = (72 * 1920) / 100 - (1920 - 1225);
+    } else {
+      this.videoWidth = (72 * 1920) / 100 - (1920 - this.screenWidth);
+    }
   }
 
   ngOnInit(): void {}
